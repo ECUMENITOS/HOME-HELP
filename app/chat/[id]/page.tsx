@@ -81,11 +81,21 @@ export default function ChatRoom() {
         
         {/* Chat Header */}
         <div className="bg-amber-900 text-white p-5 flex justify-between items-center shadow-md z-10">
-          <div>
-            <h2 className="font-extrabold text-xl">{jobDetails.service_type}</h2>
-            <p className="text-amber-200 text-sm flex items-center gap-1 mt-1">
-              <span>📍</span> {jobDetails.address}
-            </p>
+          <div className="flex items-center gap-4">
+            {/* Exit Cross Button */}
+            <button 
+              onClick={() => router.back()}
+              className="text-amber-200 hover:text-white bg-amber-950/40 hover:bg-amber-950 w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold transition-all border border-amber-800"
+              title="Exit Chat"
+            >
+              ✕
+            </button>
+            <div>
+              <h2 className="font-extrabold text-xl">{jobDetails.service_type}</h2>
+              <p className="text-amber-200 text-sm flex items-center gap-1 mt-1">
+                <span>📍</span> {jobDetails.address}
+              </p>
+            </div>
           </div>
           <div className="bg-amber-800 px-5 py-2 rounded-xl font-black text-amber-100 text-lg border border-amber-700">
             ₹{jobDetails.offer_price}
